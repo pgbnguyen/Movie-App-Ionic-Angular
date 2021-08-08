@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-button shape="round" slot="end" (click)="deleteAll()"
+      ><ion-icon name="trash" size="large" color="danger"></ion-icon
+    ></ion-button>
+    <ion-title>Your Favorite List</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-list>
+    <ion-item-sliding #item *ngFor="let item of favoriteMovies">
+      <ion-avatar slot="start">
+        <img [src]="item.postter" />
+      </ion-avatar>
+
+      <ion-label text-wrap>
+        <h3>{{ item.title }}</h3>
+        {{ item.year }}
+      </ion-label>
+
+      <ion-icon slot="end" name="heart"></ion-icon>
+
+      <ion-item-options side="left" class="button-light icon ion-trash"
+        ><button ion-button color="danger" (click)="share(item)">
+          Share
+        </button></ion-item-options
+      >
+    </ion-item-sliding>
+  </ion-list> -->
+  <ion-list>
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding *ngFor="let item of favoriteMovies">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="item.postter" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ item.title }}</h2>
+          <ion-note>{{ item.year }}</ion-note>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option color="danger">
+          <ion-icon
+            name="trash"
+            size="large"
+            (click)="deleteOne(item)"
+          ></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

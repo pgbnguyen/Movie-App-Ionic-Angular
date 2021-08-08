@@ -6,6 +6,8 @@
       "files": ["*.ts"],
       "parserOptions": {
         "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "tsconfigRootDir": "c:\\users\\pgbng\\onedrive - seneca\\seneca master\\summer 2021\\map524\\assignment 4\\movieApp",
+        "sourceType": "module",
         "createDefaultProgram": true
       },
       "extends": [
